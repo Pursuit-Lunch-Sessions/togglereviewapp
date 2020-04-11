@@ -1,20 +1,30 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import frontpic from "../frontDog.png";
+import frontPic from "../frontDog.png";
+import sidePic from "../sideDog.png";
 import { toggle } from "../actions/toogleActions";
+import Btn from "../components/Button";
 
 const CreateToggle = () => {
   const dispatch = useDispatch();
   const View = useSelector((state) => state);
-  debugger;
+  // debugger;
   const handleClick = () => {
-    dispatch(toggle("side"));
+    View.viewside === "front"
+      ? dispatch(toggle("side"))
+      : dispatch(toggle("front"));
+  };
+  // debugger;
+
+  const displayImg = () => {
+    return <img src={View.viewside === "front" ? frontPic : sidePic}></img>;
   };
 
   return (
     <div>
-      <img src={frontpic}></img>
-      <h1>{}</h1>
+      {displayImg()}
+      <h1>{View.viewside}</h1>
+      {View.viewside === "front" ? <Btn /> : null}
       <button onClick={handleClick}>TOGGLE</button>
     </div>
   );
