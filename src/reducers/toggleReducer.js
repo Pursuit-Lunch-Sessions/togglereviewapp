@@ -8,7 +8,7 @@ const toggleReducer = (state = _defaultState, action) => {
 
   switch (action.type) {
     case TOGGLE:
-      newState.view = action.payload.view;
+      newState.viewside = action.payload.viewside;
       return newState;
     default:
       return state;

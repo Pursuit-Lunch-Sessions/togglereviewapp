@@ -1,10 +1,10 @@
 import { TOGGLE } from "./actionTypes";
 
-export const toggle = (view) => {
+export const toggle = (viewside) => {
   return {
     type: TOGGLE,
     payload: {
-      view: view,
+      viewside: viewside,
     },
   };
 };

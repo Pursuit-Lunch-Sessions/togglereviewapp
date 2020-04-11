@@ -1,13 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import frontpic from "../frontDog.png";
-// import { addTodo } from "../actions/todoActions";
+import { toggle } from "../actions/toogleActions";
 
 const CreateToggle = () => {
   const dispatch = useDispatch();
   const View = useSelector((state) => state);
   debugger;
-  const handleClick = () => {};
+  const handleClick = () => {
+    dispatch(toggle("side"));
+  };
 
   return (
     <div>
